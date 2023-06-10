@@ -20,8 +20,12 @@ function timer() {
     
     document.addEventListener('click', function(e) {
         const el = e.target;
+        console.log(e.target);
+
+        const iniciar = document.querySelector('.iniciar');
         
         if(el.classList.contains('zerar')) {
+            iniciar.disabled = false;
             clearInterval(timer);
             relogio.innerHTML = '00:00:00';
             relogio.classList.remove('pausado');
@@ -29,12 +33,15 @@ function timer() {
         }
     
         if(el.classList.contains('iniciar')) {
+            iniciar.disabled = true;
             relogio.classList.remove('pausado');
             clearInterval(timer);
             iniciaRelogio();
+
         }
     
         if(el.classList.contains('pausar')) {
+            iniciar.disabled = false;
             clearInterval(timer);
             relogio.classList.add('pausado');
         }

@@ -3,6 +3,7 @@
 :root {
     --primary-color: rgb(72, 61, 139);
     --primary-color-darker: rgb(25, 25, 112);
+    --light-primary-color: rgb(131, 127, 160);
 }
 
 * {
@@ -61,6 +62,12 @@ h1 {
     cursor: pointer;
     margin-top: 30px;
     width: 20%;
+}
+
+.iniciar:disabled,.iniciar[disabled] {
+    background: var(--light-primary-color);
+    color: #c6c6c6;
+    pointer-events: none;
 }
 
 button:hover {
